@@ -25,6 +25,8 @@ function generatePassword() {
     specialChar: false
   }
 
+  const minLen = 8;
+  const maxLen = 128;
   var pswd = "";
   var allTypesArray = [];
   var pswdLen = 0;
@@ -34,8 +36,8 @@ function generatePassword() {
   while (!CheckForAtLeastOne(responses)) {
 
     // make sure a valid password length is selected
-    while (pswdLen < 8 || pswdLen >12) {
-      pswdLen = prompt("How many characters do you want for your password?  Enter a number from 8 to 12.", "8");
+    while (pswdLen < minLen || pswdLen > maxLen) {
+      pswdLen = prompt("How many characters do you want for your password?  Enter a number from 8 to 128.", "8");
       lenLeft = pswdLen;
     }
 
